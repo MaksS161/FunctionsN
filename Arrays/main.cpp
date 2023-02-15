@@ -2,13 +2,13 @@
 #include <iostream>
 using namespace std;
 
-void FillRand(int arr[], const int n);//заполнение массива случайными числами
-void Print(int arr[], const int n);//вывод массива на экран
-void Sum(int arr[], const int n);//вывод на экран суммы массива
-void Avg (int arr[], const int n);//вывод на экран средне-арифмитическое  
-void minValueIn(int arr[], const int n);//вывод минимального значения массива
-void maxValueIn(int arr[], const int n);//вывод минимального значения массива
-void Sort(int arr[], const int n);//сортировка массива 
+void FillRand(int arr[], const int n);//Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
+void Print(int arr[], const int n);//РІС‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ
+void Sum(int arr[], const int n);//РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ СЃСѓРјРјС‹ РјР°СЃСЃРёРІР°
+void Avg (int arr[], const int n);//РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ СЃСЂРµРґРЅРµ-Р°СЂРёС„РјРёС‚РёС‡РµСЃРєРѕРµ  
+void minValueIn(int arr[], const int n);//РІС‹РІРѕРґ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РјР°СЃСЃРёРІР°
+void maxValueIn(int arr[], const int n);//РІС‹РІРѕРґ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РјР°СЃСЃРёРІР°
+void Sort(int arr[], const int n);//СЃРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° 
 
 void main()
 {
@@ -53,7 +53,7 @@ void Sum(int arr[], const int n)
 	{
 			sum += arr [i];
 	}
-	cout << "Сумма массива = " << sum << endl;
+	cout << "РЎСѓРјРјР° РјР°СЃСЃРёРІР° = " << sum << endl;
 }
 void Avg(int arr[], const int n)
 {
@@ -62,7 +62,7 @@ void Avg(int arr[], const int n)
 	{
 		sum += arr[i];
 	}
-	cout << "Средне-арифметическое массива = " << sum/n << endl;
+	cout << "РЎСЂРµРґРЅРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РјР°СЃСЃРёРІР° = " << sum/n << endl;
 }
 
 void minValueIn(int arr[], const int n)
@@ -73,7 +73,7 @@ void minValueIn(int arr[], const int n)
 		if (min > arr[i])
 			min = arr[i];
 	}		
-cout << "Минимальное значение массива = " << min << endl;
+cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << min << endl;
 }
 void maxValueIn(int arr[], const int n)
 {
@@ -83,7 +83,7 @@ void maxValueIn(int arr[], const int n)
 		if (max < arr[i])
 			max = arr[i];
 	}
-	cout << "Максимальное значение массива = " << max << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР° = " << max << endl;
 }
 void Sort(int arr[], const int n)
 {
