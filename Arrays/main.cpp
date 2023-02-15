@@ -18,6 +18,7 @@ void main()
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
+	Sum(arr, n);
 
 
 }
@@ -56,7 +57,12 @@ void Sort(int arr[], const int n)
 }
 void Sum(int arr[], const int n)
 {
-
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+			sum += arr [i];
+	}
+	cout << "сумма масиива = " << sum << endl;
 }
 
 
