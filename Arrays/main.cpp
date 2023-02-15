@@ -1,4 +1,4 @@
-//Arrays
+﻿//Arrays
 #include <iostream>
 using namespace std;
 
@@ -27,6 +27,8 @@ void main()
 	cout << endl;
 	Sort(arr, n);
 	Print(arr, n);
+	int left = 0;
+	cout << "Введите на сколько эллeментов сдвинуть влево : "; cin >> left;
 }
 
 void FillRand(int arr[], int n)
