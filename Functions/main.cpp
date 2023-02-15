@@ -10,7 +10,7 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	int a, b;
-	cout << "Ââåäèòå äâà ÷èñë: "; cin >> a >> b;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»: "; cin >> a >> b;
 	int c = Sum(a, b);
 	cout << a << " + " << b << " = " << c << endl;
 	cout << a << " - " << b << " = " << Dif(a, b) << endl;
