@@ -2,10 +2,10 @@
 #include <iostream>
 using namespace std;
 
-void FillRand(int arr[], const int n);
-void Print(int arr[], const int n);
-void Sort(int arr[], const int n);
-void Sum(int arr[], const int n);
+void FillRand(int arr[], const int n);//заполнение массива случайными числами
+void Print(int arr[], const int n);//вывод массива на экран
+void Sort(int arr[], const int n);//сортировка массива 
+void Sum(int arr[], const int n);//вывод на экран суммы массива
 
 void main()
 {
