@@ -9,12 +9,15 @@ void Avg (int arr[], const int n);//вывод на экран средне-ар
 void minValueIn(int arr[], const int n);//вывод минимального значения массива
 void maxValueIn(int arr[], const int n);//вывод минимального значения массива
 void Sort(int arr[], const int n);//сортировка массива 
+void shiftLeft(int arr[], const int n);//Сдвиг влево
+void shiftRight(int arr[], const int n);//Сдвиг вправо
+
 
 void main()
 {
 	setlocale(LC_ALL, "");
 
-	const int n = 5;
+	const int n = 10;
 	int arr[n];
 
 	FillRand(arr, n);
@@ -27,15 +30,17 @@ void main()
 	cout << endl;
 	Sort(arr, n);
 	Print(arr, n);
-	int left = 0;
-	cout << "Введите на сколько эллeментов сдвинуть влево : "; cin >> left;
+	shiftLeft(arr, n);
+	shiftRight(arr, n);
+
+
 }
 
 void FillRand(int arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand()%100;
+		arr[i] = rand();
 	}
 } 
 
@@ -57,6 +62,7 @@ void Sum(int arr[], const int n)
 	}
 	cout << "Сумма массива = " << sum << endl;
 }
+
 void Avg(int arr[], const int n)
 {
 	double sum=0;
@@ -69,17 +75,18 @@ void Avg(int arr[], const int n)
 
 void minValueIn(int arr[], const int n)
 {
-	int min = 0;
+	int min = arr[0];
 	for (int i=0; i<n; i++)
 	{
-		if (min > arr[i])
+		if (min >arr[i])
 			min = arr[i];
 	}		
 cout << "Минимальное значение массива = " << min << endl;
 }
+
 void maxValueIn(int arr[], const int n)
 {
-	int max = 0;
+	int max = arr[0];
 	for (int i = 0; i < n; i++)
 	{
 		if (max < arr[i])
@@ -87,6 +94,7 @@ void maxValueIn(int arr[], const int n)
 	}
 	cout << "Максимальное значение массива = " << max << endl;
 }
+
 void Sort(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -102,3 +110,44 @@ void Sort(int arr[], const int n)
 		}
 	}
 }
+
+void shiftLeft(int arr[], const int n)
+{
+	int left;
+	cout << "Введите на сколько эллeментов сдвинуть влево : "; cin >> left;
+	for (int i = 0; i < left; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[n - 1] = buffer;
+}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void shiftRight(int arr[], const int n)
+{
+	int right;
+	cout << "Введите на сколько эллeментов сдвинуть право : "; cin >> right;
+	for (int i = n-right; i <n; i++)
+	{
+		int buffer = arr[n-1];
+		for (int i=n-right; i < n; i++)
+		{
+			arr[i] = arr[i -1];
+		}
+		arr[n + 1] = buffer;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
