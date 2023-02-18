@@ -3,14 +3,23 @@
 using namespace std;
 
 void FillRand(int arr[], const int n);//заполнение массива случайными числами
+
 void Print(int arr[], const int n);//вывод массива на экран
+
 int Sum(int arr[], const int n);//вывод на экран суммы массива
-double Avg (int arr[], const int n);//вывод на экран средне-арифмитическое  
+
+double Avg (int arr[], const int n);//вывод на экран средне-арифмитическое 
+
 int minValueIn(int arr[], const int n);//вывод минимального значения массива
+
 int maxValueIn(int arr[], const int n);//вывод минимального значения массива
+
 void Sort(int arr[], const int n);//сортировка массива 
+
 void shiftLeft(int arr[], const int n);//Сдвиг влево
+
 void shiftRight(int arr[], const int n);//Сдвиг вправо
+
 
 
 void main()
@@ -119,26 +128,23 @@ void shiftLeft(int arr[], const int n)
 			arr[i] = arr[i + 1];
 		}
 		arr[n - 1] = buffer;
-}
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
 	}
-	cout << endl;
+	Print(arr, n);
 }
 
 void shiftRight(int arr[], const int n)
 {
 	int right;
 	cout << "Введите на сколько элeментов сдвинуть вправо : "; cin >> right;
-	for (int i = n - right; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	for (int j = 0; j < n - right; j++)
-	{
-		cout << arr[j] << "\t";
-	}
-	cout << endl;
-}
 
+	for (int i = 0; i < right; i++)
+	{
+		int buffer = arr[n - 1];
+		for (int i = n - 1; i >= 0; i--)
+		{
+			arr[i] = arr[i - 1];
+		}
+		arr[0] = buffer;
+	}
+	Print(arr, n);
+}
