@@ -4,10 +4,10 @@ using namespace std;
 
 void FillRand(int arr[], const int n);//заполнение массива случайными числами
 void Print(int arr[], const int n);//вывод массива на экран
-void Sum(int arr[], const int n);//вывод на экран суммы массива
-void Avg (int arr[], const int n);//вывод на экран средне-арифмитическое  
-void minValueIn(int arr[], const int n);//вывод минимального значения массива
-void maxValueIn(int arr[], const int n);//вывод минимального значения массива
+int Sum(int arr[], const int n);//вывод на экран суммы массива
+double Avg (int arr[], const int n);//вывод на экран средне-арифмитическое  
+int minValueIn(int arr[], const int n);//вывод минимального значения массива
+int maxValueIn(int arr[], const int n);//вывод минимального значения массива
 void Sort(int arr[], const int n);//сортировка массива 
 void shiftLeft(int arr[], const int n);//Сдвиг влево
 void shiftRight(int arr[], const int n);//Сдвиг вправо
@@ -22,25 +22,21 @@ void main()
 
 	FillRand(arr, n);
 	Print(arr, n);
-	cout << endl;
-	Sum(arr, n);
-	Avg(arr, n);
-	minValueIn(arr, n);
-	maxValueIn(arr, n);
-	cout << endl;
+	cout << "Сумма элементов массива = "<<Sum(arr, n) << endl;
+	cout << "Средне-арифметическое массива = " << Avg(arr, n) << endl;
+	cout << "Минимальное значение массива = " << minValueIn(arr, n) << endl;
+	cout << "Максимальное значение массива = " << maxValueIn(arr, n) << endl;
 	Sort(arr, n);
 	Print(arr, n);
 	shiftLeft(arr, n);
 	shiftRight(arr, n);
-
-
 }
 
 void FillRand(int arr[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand();
+		arr[i] = rand()%100;
 	}
 } 
 
@@ -53,27 +49,27 @@ void Print(int arr[], const int n)
 	cout << endl;
 }
 
-void Sum(int arr[], const int n)
+int Sum(int arr[], const int n)
 {
-	double sum = 0;
+	int sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-			sum += arr [i];
+		sum += arr [i];
 	}
-	cout << "Сумма массива = " << sum << endl;
+	return sum;
 }
 
-void Avg(int arr[], const int n)
+double Avg(int arr[], const int n)
 {
 	double sum=0;
 	for (int i = 0; i < n; i++)
 	{
 		sum += arr[i];
 	}
-	cout << "Средне-арифметическое массива = " << sum/n << endl;
+	return (double) sum / n;
 }
 
-void minValueIn(int arr[], const int n)
+int minValueIn(int arr[], const int n)
 {
 	int min = arr[0];
 	for (int i=0; i<n; i++)
@@ -81,10 +77,10 @@ void minValueIn(int arr[], const int n)
 		if (min >arr[i])
 			min = arr[i];
 	}		
-cout << "Минимальное значение массива = " << min << endl;
+	return min;
 }
 
-void maxValueIn(int arr[], const int n)
+int maxValueIn(int arr[], const int n)
 {
 	int max = arr[0];
 	for (int i = 0; i < n; i++)
@@ -92,7 +88,7 @@ void maxValueIn(int arr[], const int n)
 		if (max < arr[i])
 			max = arr[i];
 	}
-	cout << "Максимальное значение массива = " << max << endl;
+	return max;
 }
 
 void Sort(int arr[], const int n)
@@ -115,7 +111,7 @@ void shiftLeft(int arr[], const int n)
 {
 	int left;
 	cout << "Введите на сколько элeментов сдвинуть влево : "; cin >> left;
-	for (int i = 0; i < left-1; i++)
+	for (int i = 0; i < left; i++)
 	{
 		int buffer = arr[0];
 		for (int i = 0; i < n; i++)
