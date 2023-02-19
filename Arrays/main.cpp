@@ -2,34 +2,24 @@
 #include <iostream>
 using namespace std;
 
-void FillRand(int arr[], const int n);//заполнение массива случайными числами
-
+void FillRand(int arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void Print(int arr[], const int n);//вывод массива на экран
-
 int Sum(int arr[], const int n);//вывод на экран суммы массива
-
 double Avg (int arr[], const int n);//вывод на экран средне-арифмитическое 
-
 int minValueIn(int arr[], const int n);//вывод минимального значения массива
-
 int maxValueIn(int arr[], const int n);//вывод минимального значения массива
-
 void Sort(int arr[], const int n);//сортировка массива 
-
 void shiftLeft(int arr[], const int n);//Сдвиг влево
-
 void shiftRight(int arr[], const int n);//Сдвиг вправо
-
-
 
 void main()
 {
 	setlocale(LC_ALL, "");
-
-	const int n = 10;
+	const int n = 8;
 	int arr[n];
-
-	FillRand(arr, n);
+	int minRand, maxRend;
+	cout << "Введите минимальное и максимальное случайное число: "; cin >> minRand >> maxRend;
+	FillRand(arr, n, minRand, maxRend);
 	Print(arr, n);
 	cout << "Сумма элементов массива = "<<Sum(arr, n) << endl;
 	cout << "Средне-арифметическое массива = " << Avg(arr, n) << endl;
@@ -37,15 +27,15 @@ void main()
 	cout << "Максимальное значение массива = " << maxValueIn(arr, n) << endl;
 	Sort(arr, n);
 	Print(arr, n);
-	shiftLeft(arr, n);
-	shiftRight(arr, n);
+//	shiftLeft(arr, n);
+	//shiftRight(arr, n);
 }
 
-void FillRand(int arr[], int n)
+void FillRand(int arr[], int n, int minRand, int maxRend)
 {
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand()%100;
+		arr[i] = rand()%(maxRend-minRand)+minRand;
 	}
 } 
 
