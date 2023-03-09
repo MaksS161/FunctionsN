@@ -1,5 +1,7 @@
 ﻿//Arrays
 #include <iostream>
+#include <conio.h>
+
 using namespace std;
 const int ROWS=8;
 const int COLS=5;
@@ -9,6 +11,7 @@ void FillRand(double arr[], const int n, int minRand, int maxRend);//запол�
 void FillRand(char arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void FillRand(int arr[ROWS] [COLS], const int n, int  minRand=0, int maxRend=100);//заполнение массива случайными числами
 void FillRand(double arr[ROWS] [COLS], const int n, int  minRand=0, int maxRend=100);//заполнение массива случайными числами
+void FillRand(char arr[ROWS] [COLS], const int n, int  minRand=0, int maxRend=100);//заполнение массива случайными числами
 
 
 void Print(int arr[], const int n);//вывод массива на экран
@@ -16,6 +19,7 @@ void Print(double arr[], const int n);//вывод массива на экра�
 void Print(char arr[], const int n);//вывод массива на экран
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод массива на экран
 void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод массива на экран
+void Print(char arr[ROWS][COLS], const int ROWS, const int COLS);//вывод массива на экран
 
 int Sum(int arr[], const int n);//вывод на экран суммы массива
 double Sum(double arr[], const int n);//вывод на экран суммы массива
@@ -91,8 +95,6 @@ void main()
 	//	minRand = maxRend;
 	//	maxRend = buffer;
 	//}
-
-
 	FillRand(brr, SIZE, minRand, maxRend);
 	Print(brr, SIZE);
 	cout << "Сумма элементов массива = "<<Sum(brr, SIZE) << endl;
@@ -103,7 +105,7 @@ void main()
 	Print(brr, SIZE);
 	cout << endl;
 
-	int i_arr_2[ROWS][COLS];
+	int i_arr_2[ROWS][COLS];// Массив Int
 	FillRand (i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
 	cout << "Сумма элементов массива = "<<Sum (i_arr_2, ROWS, COLS) << endl;
@@ -112,13 +114,18 @@ void main()
 	cout << "Максимальное значение массива = " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << endl;
 
-	double i_brr_2[ROWS][COLS];
+	double i_brr_2[ROWS][COLS];//Массив Double
 	FillRand(i_brr_2, ROWS, COLS);
 	Print(i_brr_2, ROWS, COLS);
 	cout << "Сумма элементов массива = " << Sum(i_brr_2, ROWS, COLS) << endl;
 	cout << "Средне-арифметическое массива = "<<Avg (i_brr_2, ROWS, COLS) << endl;
 	cout << "Минимальное значение массива = " << minValueIn(i_brr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение массива = " << maxValueIn(i_brr_2, ROWS, COLS) << endl;
+	cout << endl;
+	
+	//char i_crr_2[ROWS][COLS];
+	//FillRand(i_crr_2, ROWS, COLS);
+	//Print(i_crr_2, ROWS, COLS);
 
 }
 
@@ -175,6 +182,19 @@ void FillRand(double brr[ROWS][COLS], const int n, int  minRand, int maxRend)//�
 		}
 	}
 }
+void FillRand(char crr[ROWS][COLS], const int n, int  minRand, int maxRend)//заполнение массива случайными числами
+{
+	minRand *= 100;
+	maxRend *= 100;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			crr[i][j] = rand() % (maxRend - minRand) + minRand;
+			crr[i][j] /= 100;
+		}
+	}
+}
 
 void Print(int arr[], const int n)
 {
@@ -218,6 +238,17 @@ void Print(double brr[ROWS][COLS], const int ROWS, const int COLS)
 		for (int j = 0; j < COLS; j++)
 		{
 			cout << brr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+void Print(char crr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << crr[i][j] << "\t";
 		}
 		cout << endl;
 	}
