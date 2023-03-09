@@ -49,6 +49,7 @@ void Sort(int arr[], const int n);//сортировка массива
 void Sort(double arr[], const int n);//сортировка массива 
 void Sort(char arr[], const int n);//сортировка массива 
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);//сортировка массива 
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);//сортировка массива 
 
 void shiftLeft(int arr[], const int n);//Сдвиг влево
 void shiftLeft(double arr[], const int n);//Сдвиг влево
@@ -113,6 +114,10 @@ void main()
 	cout << "Минимальное значение массива = " << minValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение массива = " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << endl;
+	Sort(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+
+	cout << endl;
 
 	double i_brr_2[ROWS][COLS];//Массив Double
 	FillRand(i_brr_2, ROWS, COLS);
@@ -121,6 +126,10 @@ void main()
 	cout << "Средне-арифметическое массива = "<<Avg (i_brr_2, ROWS, COLS) << endl;
 	cout << "Минимальное значение массива = " << minValueIn(i_brr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение массива = " << maxValueIn(i_brr_2, ROWS, COLS) << endl;
+	cout << endl;
+	Sort(i_brr_2, ROWS, COLS);
+	Print(i_brr_2, ROWS, COLS);
+
 	cout << endl;
 	
 	//char i_crr_2[ROWS][COLS];
@@ -484,24 +493,48 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
-//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
-//{
-//	for (int i = 0; i < ROWS; i++)
-//	{
-//			if (arr[i][j] < arr[i])
-//			{
-//				int buffer = arr[i];
-//				arr[i] = arr[j];
-//				arr[j] = buffer;
-//			}
-//		for (int m = 0; m < COLS; m++)
-//		{
-//		for (int j = i + 1; j < n; j++)
-//		{
-//		}
-//		}
-//	}
-//}
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int m = 0; m<ROWS; m++)
+			{
+				for (int n = 0; n < COLS; n++)
+				{
+					if (arr[m][n] > arr[i][j])
+					{
+						int buffer = arr[m][n];
+						arr[m][n] = arr[i][j];
+						arr[i][j] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int m = 0; m<ROWS; m++)
+			{
+				for (int n = 0; n < COLS; n++)
+				{
+					if (arr[m][n] > arr[i][j])
+					{
+						double buffer = arr[m][n];
+						arr[m][n] = arr[i][j];
+						arr[i][j] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
 
 void shiftLeft(int arr[], const int n)
 {
