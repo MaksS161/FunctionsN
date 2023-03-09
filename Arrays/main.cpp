@@ -8,12 +8,14 @@ void FillRand(int arr[], const int n, int minRand, int maxRend);//заполне
 void FillRand(double arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void FillRand(char arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void FillRand(int arr[ROWS] [COLS], const int n, int  minRand=0, int maxRend=100);//заполнение массива случайными числами
+void FillRand(double arr[ROWS] [COLS], const int n, int  minRand=0, int maxRend=100);//заполнение массива случайными числами
 
 
 void Print(int arr[], const int n);//вывод массива на экран
 void Print(double arr[], const int n);//вывод массива на экран
 void Print(char arr[], const int n);//вывод массива на экран
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод массива на экран
+void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод массива на экран
 
 int Sum(int arr[], const int n);//вывод на экран суммы массива
 double Sum(double arr[], const int n);//вывод на экран суммы массива
@@ -104,6 +106,11 @@ void main()
 	cout << "Средне-арифметическое массива = "<<Avg (i_arr_2, ROWS, COLS) << endl;
 	cout << "Минимальное значение массива = " << minValueIn(i_arr_2, ROWS, COLS) << endl;
 	cout << "Максимальное значение массива = " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
+	cout << endl;
+
+	int i_brr_2[ROWS][COLS];
+	FillRand(i_brr_2, ROWS, COLS);
+	Print(i_brr_2, ROWS, COLS);
 
 
 }
@@ -148,6 +155,19 @@ void FillRand(int arr[ROWS][COLS], const int n, int  minRand, int maxRend)//за
 		}
 	}
 }
+void FillRand(double arr[ROWS][COLS], const int n, int  minRand, int maxRend)//заполнение массива случайными числами
+{
+	minRand *= 100;
+	maxRend *= 100;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % (maxRend - minRand) + minRand;
+			arr[i][j] /= 100;
+		}
+	}
+}
 
 void Print(int arr[], const int n)
 {
@@ -184,6 +204,18 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		cout << endl;
 	}
 }
+void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
 int Sum(int arr[], const int n)
 {
 	int sum = 0;
@@ -373,24 +405,24 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-			if (arr[i][j] < arr[i])
-			{
-				int buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		for (int m = 0; m < COLS; m++)
-		{
-		for (int j = i + 1; j < n; j++)
-		{
-		}
-		}
-	}
-}
+//void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+//{
+//	for (int i = 0; i < ROWS; i++)
+//	{
+//			if (arr[i][j] < arr[i])
+//			{
+//				int buffer = arr[i];
+//				arr[i] = arr[j];
+//				arr[j] = buffer;
+//			}
+//		for (int m = 0; m < COLS; m++)
+//		{
+//		for (int j = i + 1; j < n; j++)
+//		{
+//		}
+//		}
+//	}
+//}
 
 void shiftLeft(int arr[], const int n)
 {
