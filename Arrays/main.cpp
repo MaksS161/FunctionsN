@@ -6,6 +6,7 @@ using namespace std;
 const int ROWS=8;
 const int COLS=5;
 
+
 void FillRand(int arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void FillRand(double arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
 void FillRand(char arr[], const int n, int minRand, int maxRend);//заполнение массива случайными числами
@@ -116,7 +117,6 @@ void main()
 	cout << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-
 	cout << endl;
 
 	double i_brr_2[ROWS][COLS];//Массив Double
@@ -129,7 +129,6 @@ void main()
 	cout << endl;
 	Sort(i_brr_2, ROWS, COLS);
 	Print(i_brr_2, ROWS, COLS);
-
 	cout << endl;
 	
 	//char i_crr_2[ROWS][COLS];
