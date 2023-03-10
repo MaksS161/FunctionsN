@@ -27,6 +27,7 @@ double Sum(double arr[], const int n);//вывод на экран суммы м
 char Sum(char arr[], const int n);//вывод на экран суммы массива
 int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран суммы массива
 double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран суммы массива
+char Sum(char arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран суммы массива
 
 double Avg (int arr[], const int n);//вывод на экран средне-арифмитическое 
 double Avg (double arr[], const int n);//вывод на экран средне-арифмитическое 
