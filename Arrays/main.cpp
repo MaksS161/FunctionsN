@@ -60,6 +60,7 @@ void Sort(char arr[ROWS][COLS], const int ROWS, const int COLS);//сортиро
 void shiftLeft(int arr[], const int n);//Сдвиг влево
 void shiftLeft(double arr[], const int n);//Сдвиг влево
 void shiftLeft(char arr[], const int n);//Сдвиг влево
+void shiftLeft (int arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг влево
 
 void shiftRight(int arr[], const int n);//Сдвиг вправо
 void shiftRight(double arr[], const int n);//Сдвиг вправо
@@ -88,8 +89,8 @@ void main()
 	cout << "Максимальное значение массива = " << maxValueIn(arr, n) << endl;
 	Sort(arr, n);
 	Print(arr, n);
-	//shiftLeft(arr, n);
-	//shiftRight(arr, n);
+	shiftLeft(arr, n);
+	shiftRight(arr, n);
 	cout << endl;
 
 	const int SIZE = 10;
@@ -110,6 +111,8 @@ void main()
 	cout << "Максимальное значение массива = " << maxValueIn(brr, SIZE) << endl;
 	Sort(brr, SIZE);
 	Print(brr, SIZE);
+	shiftLeft(brr, SIZE);
+	shiftRight(brr, SIZE);
 	cout << endl;
 
 	int i_arr_2[ROWS][COLS];// Массив Int
@@ -122,6 +125,7 @@ void main()
 	cout << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
+	shiftLeft(i_arr_2, ROWS,COLS);
 	cout << endl;
 
 	double i_brr_2[ROWS][COLS];//Массив Double
@@ -649,6 +653,25 @@ void shiftLeft(char arr[], const int n)
 	}
 	Print(arr, n);
 }
+void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int left;
+	cout << "Введите на сколько элeментов сдвинуть влево : "; cin >> left;
+	for (int i = 0; i < left; i++)
+	{
+		int buffer = arr[0][0];
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int m = 0; m < ROWS; m++)
+			{
+				arr[j][m] = arr[j + 1][m + 1];
+				arr[j][m] = buffer;
+			}
+		}
+	}
+	Print(arr, ROWS,COLS);
+}
+
 
 void shiftRight(int arr[], const int n)
 {
