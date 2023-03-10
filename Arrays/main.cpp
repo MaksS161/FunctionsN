@@ -34,24 +34,28 @@ double Avg (double arr[], const int n);//вывод на экран средне
 char Avg (char arr[], const int n);//вывод на экран средне-арифмитическое 
 double Avg (int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран средне-арифмитическое 
 double Avg (double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран средне-арифмитическое 
+double Avg (char arr[ROWS][COLS], const int ROWS, const int COLS);//вывод на экран средне-арифмитическое 
 
 int minValueIn(int arr[], const int n);//вывод минимального значения массива
 double minValueIn(double arr[], const int n);//вывод минимального значения массива
 char minValueIn(char arr[], const int n);//вывод минимального значения массива
 int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
 double minValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
+char minValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
 
 int maxValueIn(int arr[], const int n);//вывод минимального значения массива
 double maxValueIn(double arr[], const int n);//вывод минимального значения массива
 char maxValueIn(char arr[], const int n);//вывод минимального значения массива
 int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
 double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
+char maxValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS);//вывод минимального значения массива
 
 void Sort(int arr[], const int n);//сортировка массива 
 void Sort(double arr[], const int n);//сортировка массива 
 void Sort(char arr[], const int n);//сортировка массива 
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);//сортировка массива 
 void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);//сортировка массива 
+void Sort(char arr[ROWS][COLS], const int ROWS, const int COLS);//сортировка массива 
 
 void shiftLeft(int arr[], const int n);//Сдвиг влево
 void shiftLeft(double arr[], const int n);//Сдвиг влево
@@ -301,7 +305,20 @@ int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 	}
 	return sum;
-}double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS)
+}
+double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+		sum += arr[i][j];
+		}
+	}
+	return sum;
+}
+char Sum(char arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	double sum = 0;
 	for (int i = 0; i < ROWS; i++)
@@ -331,6 +348,10 @@ double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	return (double)Sum(arr, ROWS,COLS) / (ROWS*COLS);
 }
 double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS,COLS) / (ROWS*COLS);
+}
+double Avg(char arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return (double)Sum(arr, ROWS,COLS) / (ROWS*COLS);
 }
@@ -391,6 +412,19 @@ double minValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return min;
 }
+char minValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	char min = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (min > arr[i][j])
+				min = arr[i][j];
+		}
+	}
+	return min;
+}
 
 int maxValueIn(int arr[], const int n)
 {
@@ -438,6 +472,19 @@ int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
 double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	double max = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (max < arr[i][j])
+				max = arr[i][j];
+		}
+	}
+	return max;
+}
+char maxValueIn(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	char max = arr[0][0];
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -527,6 +574,27 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 					if (arr[m][n] > arr[i][j])
 					{
 						double buffer = arr[m][n];
+						arr[m][n] = arr[i][j];
+						arr[i][j] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
+void Sort(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int m = 0; m<ROWS; m++)
+			{
+				for (int n = 0; n < COLS; n++)
+				{
+					if (arr[m][n] > arr[i][j])
+					{
+						char buffer = arr[m][n];
 						arr[m][n] = arr[i][j];
 						arr[i][j] = buffer;
 					}
