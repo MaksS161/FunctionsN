@@ -94,7 +94,21 @@ void main()
 }
 
 
-
+void shiftLeft(int arr[], const int n)
+{
+	int left;
+	cout << "Введите на сколько элeментов сдвинуть влево : "; cin >> left;
+	for (int i = 0; i < left; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[n - 1] = buffer;
+	}
+	Print(arr, n);
+}
 void shiftLeft(double arr[], const int n)
 {
 	int left;
