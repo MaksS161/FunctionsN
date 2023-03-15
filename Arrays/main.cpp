@@ -61,37 +61,43 @@ void shiftLeft(int arr[], const int n);//Сдвиг влево
 void shiftLeft(double arr[], const int n);//Сдвиг влево
 void shiftLeft(char arr[], const int n);//Сдвиг влево
 void shiftLeft (int arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг влево
+void shiftLeft (double arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг влево
+void shiftLeft (char arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг влево
 
 void shiftRight(int arr[], const int n);//Сдвиг вправо
 void shiftRight(double arr[], const int n);//Сдвиг вправо
-void shiftRight(char arr[], const int n);//Сдвиг вправо
+void shiftRight(char arr[], const int n);//Сдвиг 
+void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг вправо
+void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг вправо
+void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг вправо
 
-void UniqueRand(int arr[], const int n);
+void UniqueRand(int arr[], const int n);//Заполнение массива случайными не повторющимися числами
 void UniqueRand(double arr[], const int n);
 void UniqueRand(char arr[], const int n);
 
-void Search(int arr[], const int n);
+void Search(int arr[], const int n);//поиск повторяющихся чисел в впределах массива
 void Search(double arr[], const int n);
 void Search(char arr[], const int n);
 
 void main()
 {
 	setlocale(LC_ALL, "");
-	//const int n = 8;
-	//double arr[n];
-	//int minRand, maxRend;
-	//FillRand(arr, n, minRand=0, maxRend=20);
-	////UniqueRand(arr, n);
-	//Print(arr, n);
-	//cout << "Сумма элементов массива = " << Sum(arr, n) << endl;
-	//cout << "Средне-арифметическое массива = " << Avg(arr, n) << endl;
-	//cout << "Минимальное значение массива = " << minValueIn(arr, n) << endl;
-	//cout << "Максимальное значение массива = " << maxValueIn(arr, n) << endl;
-	//Sort(arr, n);
-	//Print(arr, n);
+	const int n = 8;
+	int arr[n];
+	int minRand, maxRend;
+	FillRand(arr, n, minRand=0, maxRend=5);
+	//UniqueRand(arr, n);
+	Print(arr, n);
+	cout << "Сумма элементов массива = " << Sum(arr, n) << endl;
+	cout << "Средне-арифметическое массива = " << Avg(arr, n) << endl;
+	cout << "Минимальное значение массива = " << minValueIn(arr, n) << endl;
+	cout << "Максимальное значение массива = " << maxValueIn(arr, n) << endl;
+	Sort(arr, n);
+	Print(arr, n);
 	//shiftLeft(arr, n);
 	//shiftRight(arr, n);
-	//cout << endl;
+	Search(arr, n);
+	cout << endl;
 
 	//const int SIZE = 10;
 	//int brr[SIZE];
@@ -115,20 +121,21 @@ void main()
 	//shiftRight(brr, SIZE);
 	//cout << endl;
 
-	int i_arr_2[ROWS][COLS];// Массив Int
-	FillRand (i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
-	cout << "Сумма элементов массива = "<<Sum (i_arr_2, ROWS, COLS) << endl;
-	cout << "Средне-арифметическое массива = "<<Avg (i_arr_2, ROWS, COLS) << endl;
-	cout << "Минимальное значение массива = " << minValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << "Максимальное значение массива = " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << endl;
-	Sort(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
-	cout << "Введите на сколько элeментов сдвинуть влево : "; 
-
-	shiftLeft(i_arr_2, ROWS,COLS);
-	cout << endl;
+	//int i_arr_2[ROWS][COLS];// Массив Int
+	//FillRand (i_arr_2, ROWS, COLS);
+	//Print(i_arr_2, ROWS, COLS);
+	//cout << "Сумма элементов массива = "<<Sum (i_arr_2, ROWS, COLS) << endl;
+	//cout << "Средне-арифметическое массива = "<<Avg (i_arr_2, ROWS, COLS) << endl;
+	//cout << "Минимальное значение массива = " << minValueIn(i_arr_2, ROWS, COLS) << endl;
+	//cout << "Максимальное значение массива = " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
+	//cout << endl;
+	//Sort(i_arr_2, ROWS, COLS);
+	//Print(i_arr_2, ROWS, COLS);
+	//cout << "Введите на сколько элeментов сдвинуть влево : "; 
+	//shiftLeft(i_arr_2, ROWS,COLS);
+	//cout << "Введите на сколько элeментов сдвинуть вправо : "; 
+	//shiftRight(i_arr_2, ROWS,COLS);
+	//cout << endl;
 
 	//double i_brr_2[ROWS][COLS];//Массив Double
 	//FillRand(i_brr_2, ROWS, COLS);
@@ -138,10 +145,14 @@ void main()
 	//cout << "Минимальное значение массива = " << minValueIn(i_brr_2, ROWS, COLS) << endl;
 	//cout << "Максимальное значение массива = " << maxValueIn(i_brr_2, ROWS, COLS) << endl;
 	//cout << endl;
-	//Sort(i_brr_2, ROWS, COLS);
-	//Print(i_brr_2, ROWS, COLS);
+	//Sort(i_brr_2, ROWS, COLS); cout << endl;
+	//Print(i_brr_2, ROWS, COLS); cout << endl;
+	//cout << "Введите на сколько элeментов сдвинуть влево : "; 
+	//shiftLeft(i_brr_2, ROWS,COLS);cout << endl;
+	//cout << "Введите на сколько элeментов сдвинуть вправо : ";
+	//shiftRight(i_brr_2, ROWS, COLS);
 	//cout << endl;
-	
+
 	//char i_crr_2[ROWS][COLS];
 	//FillRand(i_crr_2, ROWS, COLS);
 	//Print(i_crr_2, ROWS, COLS);
@@ -673,7 +684,42 @@ cin >> left;
 	}
 	Print(arr, ROWS,COLS);
 }
-
+void shiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+double left = 0;
+cin >> left;
+	for (int i = 0; i < left; i++)
+	{
+		double buffer = arr[0][0];
+		for (int j = 0; j < ROWS; j++)
+		{
+			for (int m = 0; m < COLS; m++)
+			{
+				arr[j][m] = arr[j][m+1];
+			}
+		}
+		arr[ROWS-1][COLS-1] = buffer;
+	}
+	Print(arr, ROWS,COLS);
+}
+void shiftLeft(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+char left = 0;
+cin >> left;
+	for (int i = 0; i < left; i++)
+	{
+		char buffer = arr[0][0];
+		for (int j = 0; j < ROWS; j++)
+		{
+			for (int m = 0; m < COLS; m++)
+			{
+				arr[j][m] = arr[j][m+1];
+			}
+		}
+		arr[ROWS-1][COLS-1] = buffer;
+	}
+	Print(arr, ROWS,COLS);
+}
 
 void shiftRight(int arr[], const int n)
 {
@@ -723,6 +769,61 @@ void shiftRight(char arr[], const int n)
 	}
 	Print(arr, n);
 }
+void shiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int right = 0;
+	cin >> right;
+	for (int i = 0; i < right; i++)
+	{
+		int buffer = arr[ROWS-1][COLS-1];
+		for (int j = ROWS-1; j >=0; j--)
+		{
+			for (int m= COLS -1; m >=0; m--)
+			{
+				arr[j][m] = arr[j][m - 1];
+			}
+		}
+		arr[0][0] = buffer;
+	}
+	Print(arr, ROWS, COLS);
+}
+void shiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double right = 0;
+	cin >> right;
+	for (int i = 0; i < right; i++)
+	{
+		double buffer = arr[ROWS-1][COLS-1];
+		for (int j = ROWS-1; j >=0; j--)
+		{
+			for (int m= COLS -1; m >=0; m--)
+			{
+				arr[j][m] = arr[j][m - 1];
+			}
+		}
+		arr[0][0] = buffer;
+	}
+	Print(arr, ROWS, COLS);
+}
+void shiftRight(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	char right = 0;
+	cin >> right;
+	for (int i = 0; i < right; i++)
+	{
+		char buffer = arr[ROWS-1][COLS-1];
+		for (int j = ROWS-1; j >=0; j--)
+		{
+			for (int m= COLS -1; m >=0; m--)
+			{
+				arr[j][m] = arr[j][m - 1];
+			}
+		}
+		arr[0][0] = buffer;
+	}
+	Print(arr, ROWS, COLS);
+}
+
 void UniqueRand(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -745,9 +846,16 @@ void UniqueRand(double arr[], const int n)
 }
 void Search(int arr[], const int n)
 {
+int buffer = 0;
 	for (int i = 0; i < n; i++)
 	{
-
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] == arr[i])
+			{
+				buffer+=i;
+			}
+		}
 	}
-
+		cout << buffer;
 }
