@@ -1,6 +1,5 @@
 ﻿//Arrays
 #include <iostream>
-#include <conio.h>
 
 using namespace std;
 const int ROWS=8;
