@@ -53,13 +53,11 @@ void shiftRight(T arr[], const int n);//Сдвиг вправо
 template<typename T>
 void shiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS);//Сдвиг вправо
 
-void UniqueRand(int arr[], const int n);//Заполнение массива случайными не повторющимися числами
-void UniqueRand(double arr[], const int n);
-void UniqueRand(char arr[], const int n);
+template<typename T>
+void UniqueRand(T arr[], const int n);//Заполнение массива случайными не повторющимися числами
 
-void Search(int arr[], const int n);//поиск повторяющихся чисел в впределах массива
-void Search(double arr[], const int n);
-void Search(char arr[], const int n);
+template<typename T>
+void Search(T arr[], const int n);//поиск повторяющихся чисел в впределах массива
 
 void main()
 {
@@ -434,12 +432,12 @@ void shiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	Print(arr, ROWS, COLS);
 }
 
-
-void UniqueRand(double arr[], const int n)
+template<typename T>
+void UniqueRand(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		bool unique; 
+		T unique; 
 		do
 		{
 		arr[i] = rand() % n;
@@ -455,9 +453,11 @@ void UniqueRand(double arr[], const int n)
 		} while (!unique);
 	}
 }
-void Search(int arr[], const int n)
+
+template<typename T>
+void Search(T arr[], const int n)
 {
-int buffer = 0;
+T buffer = 0;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = i + 1; j < n; j++)
