@@ -82,8 +82,4 @@ void main()
 	cout << "Введите на сколько элeментов сдвинуть вправо : ";
 	shiftRight(i_brr_2, ROWS, COLS);
 	cout << endl;
-
-	//char i_crr_2[ROWS][COLS];
-	//FillRand(i_crr_2, ROWS, COLS);
-	//Print(i_crr_2, ROWS, COLS);
 }
