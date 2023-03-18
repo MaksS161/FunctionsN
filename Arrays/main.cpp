@@ -25,7 +25,11 @@ void main()
 	Sort(arr, n);
 	Print(arr, n);
 	shiftLeft(arr, n);
+	Print(arr, n);
+	cout << endl;
 	shiftRight(arr, n);
+	Print(arr, n);
+	cout << endl;
 	//Search(arr, n);
 	cout << endl;
 
@@ -48,7 +52,10 @@ void main()
 	Sort(brr, SIZE);
 	Print(brr, SIZE);
 	shiftLeft(brr, SIZE);
+	Print(brr, SIZE);
+	cout << endl;
 	shiftRight(brr, SIZE);
+	Print(brr, SIZE);
 	cout << endl;
 
 	int i_arr_2[ROWS][COLS];// Массив Int
@@ -64,7 +71,10 @@ void main()
 	cout << "Введите на сколько элeментов сдвинуть влево : "; 
 	shiftLeft(i_arr_2, ROWS,COLS);
 	cout << "Введите на сколько элeментов сдвинуть вправо : "; 
+	Print(i_arr_2, ROWS, COLS);
+	cout << endl;
 	shiftRight(i_arr_2, ROWS,COLS);
+	Print(i_arr_2, ROWS, COLS);
 	cout << endl;
 
 	double i_brr_2[ROWS][COLS];//Массив Double
@@ -80,6 +90,9 @@ void main()
 	cout << "Введите на сколько элeментов сдвинуть влево : "; 
 	shiftLeft(i_brr_2, ROWS,COLS);cout << endl;
 	cout << "Введите на сколько элeментов сдвинуть вправо : ";
+	Print(i_brr_2, ROWS, COLS); cout << endl;
+	cout << endl;
 	shiftRight(i_brr_2, ROWS, COLS);
+	Print(i_brr_2, ROWS, COLS); cout << endl;
 	cout << endl;
 }
