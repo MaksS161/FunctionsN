@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Shift.cpp" />
+    <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="UniqueRand.cpp" />
   </ItemGroup>
   <ItemGroup>

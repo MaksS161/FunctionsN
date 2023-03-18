@@ -3,9 +3,12 @@
 #include"Constants.h"
 #include"FillRand.h"
 #include"Print.h"
+#include"Print.cpp"
 #include"Statistics.h"
+#include"Statistics.cpp"
 #include"Sort.h"
 #include"Shift.h"
+#include"Shift.cpp"
 #include"UniqueRand.h"
 #include"Search.h"
 
