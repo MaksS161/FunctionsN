@@ -15,7 +15,6 @@ void shiftLeft(T arr[], const int n)
 		}
 		arr[n - 1] = buffer;
 	}
-//	Print(arr, n);
 }
 
 template<typename T>
@@ -73,6 +72,5 @@ void shiftRight(T arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 		arr[0][0] = buffer;
 	}
-	//Print(arr, ROWS, COLS);
 }
 
